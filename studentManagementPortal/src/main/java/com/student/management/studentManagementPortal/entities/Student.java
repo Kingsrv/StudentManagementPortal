@@ -1,10 +1,18 @@
 package com.student.management.studentManagementPortal.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
-    private int rollNumber;
+    @Id
+    private long rollNumber;
     private String name;
     private int age;
     private String city;
+
+    public Student() {
+    }
 
     public Student(int rollNumber, String name, int age, String city) {
         this.rollNumber = rollNumber;
@@ -12,7 +20,7 @@ public class Student {
         this.age = age;
         this.city = city;
     }
-    public int getRollNumber() {
+    public long getRollNumber() {
         return rollNumber;
     }
 
