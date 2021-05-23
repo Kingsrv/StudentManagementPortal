@@ -16,33 +16,43 @@ public class Mycontroller {
 
     //view all students
     @GetMapping("/view")
-    private List<Student> getStudents(){
+    private List<Student> getStudents() {
         return this.studentService.getStudent();
     }
+
     //view a particular student
     @GetMapping("/view/{rollNumber}")
-    public Student getParticularStudent(@PathVariable String rollNumber){
-        return this.studentService.getParticularStudent(Long.parseLong(rollNumber));
+    public Student getParticularStudent(@PathVariable Integer rollNumber) {
+        return this.studentService.getParticularStudent(rollNumber);
     }
+
     //add student
     @PostMapping("/add")
-    public Student addStudents(@RequestBody Student student){
+    public Student addStudents(@RequestBody Student student) {
         return this.studentService.addStudent(student);
     }
+
     //update student details
     @PutMapping("/update")
-    public Student updateStudents(@RequestBody Student student){
+    public Student updateStudents(@RequestBody Student student) {
         return this.studentService.updateStudent(student);
     }
+
     //delete student
-    @DeleteMapping("/view/{rollNumber}")
-    public ResponseEntity<HttpStatus> deleteStudents(@PathVariable String rollNumber){
-        try{
-            this.studentService.deleteStudent(Long.parseLong(rollNumber));
+    @DeleteMapping("/delete/{rollNumber}")
+    public ResponseEntity<HttpStatus> deleteStudents(@PathVariable Integer rollNumber) {
+        try {
+            this.studentService.deleteStudent(rollNumber);
             return new ResponseEntity<>(HttpStatus.OK);
-        }catch(Exception e){
+        } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+    //view all the students of a city
+    @GetMapping("/view/{city}")
+    public Student viewCityStudents(@PathVariable String city){
+        return this.studentService.viewCityStudent(city);
     }
 }
 

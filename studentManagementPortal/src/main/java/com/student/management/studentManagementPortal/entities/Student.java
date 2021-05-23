@@ -6,7 +6,7 @@ import javax.persistence.Id;
 @Entity
 public class Student {
     @Id
-    private long rollNumber;
+    private Integer rollNumber;
     private String name;
     private int age;
     private String city;
@@ -20,7 +20,8 @@ public class Student {
         this.age = age;
         this.city = city;
     }
-    public long getRollNumber() {
+
+    public Integer getRollNumber() {
         return rollNumber;
     }
 
