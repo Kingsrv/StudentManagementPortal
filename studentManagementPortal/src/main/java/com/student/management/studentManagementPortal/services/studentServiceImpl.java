@@ -70,15 +70,7 @@ public class studentServiceImpl implements studentService {
     }
 
     @Override
-    public Student viewCityStudent(String City) {
-        Student s = null;
-        List<Student> allStudent = studentDao.findAll();
-        List<Student> cityWiseStudent;
-        for(Student Student:allStudent){
-            if(Student.getCity()==city){
-                cityWiseStudent.add();
-            }
-
-        }
+    public List<Student> viewCityStudent(String City) {
+        return this.studentDao.fetchByCity(City);
     }
 }

@@ -51,7 +51,7 @@ public class Mycontroller {
 
     //view all the students of a city
     @GetMapping("/view/{city}")
-    public Student viewCityStudents(@PathVariable String city){
+    public List<Student> viewCityStudents(@PathVariable String city){
         return this.studentService.viewCityStudent(city);
     }
 }

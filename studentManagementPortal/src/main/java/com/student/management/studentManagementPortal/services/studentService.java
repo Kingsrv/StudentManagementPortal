@@ -16,5 +16,5 @@ public interface studentService {
 
     public Student getParticularStudent(Integer rollNumber);
 
-    public Student viewCityStudent(String City);
+    public List<Student> viewCityStudent(String City);
 }

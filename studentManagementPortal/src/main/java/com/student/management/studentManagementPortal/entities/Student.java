@@ -2,6 +2,7 @@ package com.student.management.studentManagementPortal.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 public class Student {
