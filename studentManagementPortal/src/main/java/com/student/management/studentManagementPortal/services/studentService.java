@@ -1,9 +1,11 @@
 package com.student.management.studentManagementPortal.services;
 
 import com.student.management.studentManagementPortal.entities.Student;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface studentService {
 
     public List<Student> getStudent();

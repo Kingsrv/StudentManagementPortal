@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface StudentDao extends JpaRepository<Student, Integer> {
 
-    @Query("select * from Student")
+    @Query("select s from Student s where s.city = :city")
     public List<Student> fetchByCity(@Param("city") String city);
 
 }

@@ -3,6 +3,7 @@ package com.student.management.studentManagementPortal.services;
 import com.student.management.studentManagementPortal.dao.StudentDao;
 import com.student.management.studentManagementPortal.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -70,7 +71,8 @@ public class studentServiceImpl implements studentService {
     }
 
     @Override
-    public List<Student> viewCityStudent(String City) {
-        return this.studentDao.fetchByCity(City);
+    public List<Student> viewCityStudent(String city) {
+        return studentDao.fetchByCity(city);
+
     }
 }
